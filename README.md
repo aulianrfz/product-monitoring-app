@@ -67,7 +67,6 @@ Karena waktu pengembangan yang terbatas, fitur offline belum sepenuhnya selesai.
 - Local Storage: Hive 
 
 ---
-
 ## Cara Menjalankan
 
 ### Backend
@@ -78,9 +77,12 @@ php artisan key:generate
 php artisan migrate
 php artisan db:seed
 php artisan serve
+Catatan: pastikan backend berjalan di http://<ip_lokal>:8000, bisa di cek melalui ipconfig
 
 ### Mobile
-cd flutter-product-monitoring
+cd flutter_product_monitoring
+Atur IP Server di Flutter: cd lib/core/config/app_config.dart
+Ubah baseUrl sesuai dengan IP perangkat yang menjalankan backend
 flutter pub get
 flutter run
 
