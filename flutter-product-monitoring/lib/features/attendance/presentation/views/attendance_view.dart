@@ -68,7 +68,7 @@ class _AttendanceViewState extends State<AttendanceView> {
       DialogService.showSuccess(
         context,
         viewModel.successMessage!,
-        title: "Berhasil Absen",
+        title: "Success!",
       );
       viewModel.clearMessages();
     }
@@ -77,7 +77,7 @@ class _AttendanceViewState extends State<AttendanceView> {
       DialogService.showError(
         context,
         viewModel.errorMessage!,
-        title: "Gagal Absen",
+        title: "Failed",
       );
       viewModel.clearMessages();
     }
@@ -123,8 +123,8 @@ class _AttendanceViewState extends State<AttendanceView> {
       onPressed: () async {
         final confirm = await DialogService.showConfirm(
           context,
-          title: "Konfirmasi Logout",
-          message: "Apakah Anda yakin ingin logout?",
+            title: "Logout Confirmation",
+            message: "Are you sure you want to logout?"
         );
 
         if (confirm == true && context.mounted) {
@@ -225,7 +225,7 @@ class _AttendanceViewState extends State<AttendanceView> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             ),
             child: Text(
-              isCheckedIn ? 'List Store' : 'Present',
+              isCheckedIn ? 'List Stores' : 'Present',
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
             ),
           ),

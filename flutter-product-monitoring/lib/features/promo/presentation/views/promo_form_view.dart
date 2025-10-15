@@ -112,8 +112,8 @@ class _PromoFormViewState extends State<PromoFormView> {
   Future<void> _handleDelete(PromoViewModel vm) async {
     final confirm = await DialogService.showConfirm(
       context,
-      title: "Hapus Promo",
-      message: "Yakin ingin menghapus promo ini?",
+        title: "Delete Promo",
+        message: "Are you sure you want to delete this promo?"
     );
 
     if (confirm == true) {
@@ -172,10 +172,10 @@ class _PromoFormViewState extends State<PromoFormView> {
                       onSelect: (p) => setState(() => _selectedProduct = p),
                     ),
                     const SizedBox(height: 16),
-                    _PriceField(label: 'Harga Normal', controller: _normalPriceController),
+                    _PriceField(label: 'Regular price', controller: _normalPriceController),
                     const SizedBox(height: 16),
                     _PriceField(
-                      label: 'Harga Promo',
+                      label: 'Promo price',
                       controller: _promoPriceController,
                       isPromoField: true,
                       normalController: _normalPriceController,
@@ -186,7 +186,7 @@ class _PromoFormViewState extends State<PromoFormView> {
             ),
             _SaveButton(
               isLoading: vm.isLoading,
-              label: isEditing ? 'Update Promo' : 'Simpan Promo',
+              label: isEditing ? 'Update Promo' : 'Save Promo',
               onPressed: () => _handleSave(vm),
             ),
           ],
@@ -240,7 +240,7 @@ class _ProductSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     final name = isEditing
         ? promoProductName
-        : selectedProduct?.name ?? 'Pilih Produk';
+        : selectedProduct?.name ?? 'Pick Product';
 
     return GestureDetector(
       onTap: isEditing
@@ -320,7 +320,7 @@ class _PriceField extends StatelessWidget {
             controller: controller,
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly, _RupiahInputFormatter()],
-            decoration: const InputDecoration(hintText: 'Masukkan harga', border: InputBorder.none, isDense: true),
+            decoration: const InputDecoration(hintText: 'Insert price', border: InputBorder.none, isDense: true),
             validator: (v) {
               if (v == null || v.isEmpty) return 'Wajib diisi';
               if (isPromoField) {
@@ -328,7 +328,7 @@ class _PriceField extends StatelessWidget {
                     normalController?.text.replaceAll(RegExp(r'[^0-9]'), '') ?? '') ??
                     0;
                 final promo = double.tryParse(v.replaceAll(RegExp(r'[^0-9]'), '')) ?? 0;
-                if (promo >= normal) return 'Harga promo harus lebih rendah';
+                if (promo >= normal) return 'The promo price must be lower than the regular price';
               }
               return null;
             },

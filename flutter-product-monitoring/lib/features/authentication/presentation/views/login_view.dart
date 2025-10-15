@@ -223,26 +223,26 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            "Don't have account? ",
-            style: TextStyle(fontSize: 14, color: Color(0xFF666666)),
-          ),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.zero,
-              minimumSize: const Size(50, 20),
-              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            ),
-            child: const Text(
-              'Sign Up',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-              ),
-            ),
-          ),
+          // const Text(
+          //   "Don't have account? ",
+          //   style: TextStyle(fontSize: 14, color: Color(0xFF666666)),
+          // ),
+          // TextButton(
+          //   onPressed: () {},
+          //   style: TextButton.styleFrom(
+          //     padding: EdgeInsets.zero,
+          //     minimumSize: const Size(50, 20),
+          //     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          //   ),
+          //   child: const Text(
+          //     'Sign Up',
+          //     style: TextStyle(
+          //       fontSize: 14,
+          //       fontWeight: FontWeight.w600,
+          //       color: Colors.black,
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

@@ -72,7 +72,7 @@ class _ConfirmationDialogContent extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 14),
                     ),
                     child: const Text(
-                      'Batal',
+                      'Cancel',
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.black87,
@@ -92,7 +92,7 @@ class _ConfirmationDialogContent extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 14),
                     ),
                     child: const Text(
-                      'Ya',
+                      'Yes',
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,

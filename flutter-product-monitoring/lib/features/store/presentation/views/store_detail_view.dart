@@ -152,7 +152,7 @@ class StoreDetailView extends StatelessWidget {
                     children: [
                       _buildMenuCard(
                         icon: Icons.inventory_2_outlined,
-                        label: 'Produk',
+                        label: 'Product',
                         color: const Color(0xFF5A8DEE),
                         onTap: () {
                           Navigator.pushNamed(

@@ -30,7 +30,7 @@ class _ProductListViewState extends State<ProductListView> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          '${product.name} diperbarui menjadi ${product.available ? 'Tidak Tersedia' : 'Tersedia'}',
+          '${product.name} has been updated to ${product.available ? 'Unavailable' : 'Available'}',
         ),
         duration: const Duration(seconds: 2),
       ),

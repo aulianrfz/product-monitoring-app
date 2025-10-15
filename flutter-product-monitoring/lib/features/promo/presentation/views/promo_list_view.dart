@@ -202,7 +202,7 @@ class _PromoListSection extends StatelessWidget {
     }
     if (viewModel.promos.isEmpty) {
       return const Center(
-        child: Text('Belum ada promo untuk toko ini', style: TextStyle(color: Colors.black54, fontSize: 16)),
+        child: Text('No promo available for this store', style: TextStyle(color: Colors.black54, fontSize: 16)),
       );
     }
 
@@ -325,7 +325,7 @@ class _AddPromoButton extends StatelessWidget {
         );
         context.read<PromoViewModel>().loadPromos(store.id, user.token);
       },
-      label: const Text('Tambah Promo',
+      label: const Text('Add Promo',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
       icon: const Icon(Icons.add, color: Colors.white),
       backgroundColor: const Color(0xFF758DE3),
